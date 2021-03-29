@@ -1,0 +1,100 @@
+/* Global styling */
+
+body{
+	background: var(--clr-primary-800);
+}
+
+:root{
+	--clr-primary-200: #FFF;
+	--clr-primary-400: #D45500;
+	--clr-secondary-400: #FFC107;
+	--clr-primary-800: #212529;
+}
+
+h1{
+	font-weight: 700;
+}
+
+h2{
+	font-weight: 600;
+}
+
+/* Header styling */
+
+header h1{
+	font-size: 1.5rem;
+	margin: 0;
+}
+
+/* Menu styling */
+
+.nav-link{
+	color: var(--clr-primary-200);
+	font-weight: 700;
+}
+
+.nav-link.active,
+.nav-link:hover
+{
+	color: var(--clr-secondary-400);
+}
+
+/* Main styling */
+
+main .content{
+	margin-top: 4em;
+	padding: 2em 2em;
+	background: var(--clr-primary-200);
+	line-height: 1.7;
+}
+
+main .content h2{
+	margin-bottom: .5em;
+	padding-bottom: .2em;
+	font-size: 2.5rem;
+	font-weight: 800;
+	color: var(--clr-primary-800);
+	position: relative;
+}
+
+main .content h2::before{
+	content: '';
+	height: 4px;
+	width: 10%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: var(--clr-primary-800);
+}
+
+main .content h3{
+	font-weight: 800;
+	color: var(--clr-primary-400);
+	margin-top: 1em;
+}
+
+/* Footer styling */
+
+footer .info{
+	background: var(--clr-primary-400);
+	padding: 3em 2em;
+	color: var(--clr-primary-200);
+}
+
+footer .info .row > .col-md p{
+	line-height: .7;
+}
+
+footer .info .row > .col-md h3{
+	margin-bottom: .7em;
+}
+
+footer .info .icons a{
+	color: var(--clr-primary-200);
+	text-decoration: none;
+}
+
+footer .info .icons a i{
+	font-size: 2rem;
+	margin: 0 .3em;
+}

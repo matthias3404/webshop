@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\PagesController;
+use \App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,17 @@ use \App\Http\Controllers\PagesController;
 |
 */
 
+// Arrange pages
+
 Route::get('/', [PagesController::class, 'index'])->name('pages.index');
+Route::get('about', [PagesController::class, 'about'])->name('pages.about');
+Route::get('contact', [PagesController::class, 'contact'])->name('pages.contact');
+
+// Arrange shop
+
+// Arrange Account
+
+Route::get('signup', [UserController::class, 'signup'])->name('user.signup');
+Route::get('login', [UserController::class, 'login'])->name('user.login');
+
+
