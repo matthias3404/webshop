@@ -27,7 +27,7 @@
 
 					<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 						<li><a href="{{ route('pages.index') }}" class="nav-link @if(Request::is('/')) active @endif px-2">Home</a></li>
-						<li><a href="#" class="nav-link @if(Request::is('shop')) active @endif px-2">Shop</a></li>
+						<li><a href="{{ route('shop.index') }}" class="nav-link @if(Request::is('shop')) active @endif px-2">Shop</a></li>
 						<li><a href="#" class="nav-link @if(Request::is('offers')) active @endif px-2">Offers</a></li>
 						<li><a href="{{ route('pages.about') }}" class="nav-link @if(Request::is('about')) active @endif px-2">About</a></li>
 						<li><a href="{{ route('pages.contact') }}" class="nav-link @if(Request::is('contact')) active @endif px-2">Contact</a></li>
@@ -37,10 +37,27 @@
 						<input type="search" class="form-control form-control-dark" placeholder="Search...">
 					</form>
 
+					@if (! Session::has('userData'))
+
 					<div class="text-end">
 						<a href="{{ route('user.login') }}" class="btn btn-outline-light me-2">Login</a>
 						<a href="{{ route('user.signup') }}" class="btn btn-warning">Sign-up</a>
 					</div>
+
+					@endif
+
+					@if (Session::has('userData'))
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Hallo, {{ Session::get('userData.firstname') }}
+						</a>
+						<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+							<li><a class="dropdown-item" href="#">Action</a></li>
+							<li><a class="dropdown-item" href="#">Another action</a></li>
+							<li><a class="dropdown-item" href="{{ route('user.logout') }}">Log uit</a></li>
+						</ul>
+					</li>
+					@endif
 				</div>
 			</div>
 		</header>
@@ -48,6 +65,7 @@
 	<main>
 		<div class="container">
 			<div class="content">
+				@include('partials.status')
 				@yield('content')
 			</div>
 		</div>

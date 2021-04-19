@@ -11,6 +11,8 @@ body{
 	--clr-primary-800: #212529;
 }
 
+/* === Font styling === */
+
 h1{
 	font-weight: 700;
 }
@@ -18,6 +20,24 @@ h1{
 h2{
 	font-weight: 600;
 }
+
+.mybtn{
+	background: var(--clr-primary-400);
+	color: var(--clr-primary-200);
+	padding: .4em 1em;
+	border-radius: 5px;
+	font-weight: 600;
+	border: 2px solid var(--clr-primary-400);
+	text-decoration: none;
+	transition: .4s;
+}
+
+.mybtn:hover{
+	color: var(--clr-primary-400);
+	background: var(--clr-primary-200);
+}
+
+/* === End font styling === */
 
 /* Header styling */
 
@@ -37,6 +57,14 @@ header h1{
 .nav-link:hover
 {
 	color: var(--clr-secondary-400);
+}
+
+.navbar ul{
+	list-style: none;
+}
+
+li.dropdown{
+	list-style-type: none;
 }
 
 /* Main styling */
@@ -71,6 +99,43 @@ main .content h3{
 	font-weight: 800;
 	color: var(--clr-primary-400);
 	margin-top: 1em;
+}
+
+/* === Products === */
+
+.products{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 3em 0;
+}
+
+.products .product-item{
+	flex-basis: 32%;
+	margin: .5em;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	transition: .4s;
+}
+
+.products .product-item:hover{
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.products .product-item .content{
+	padding: 2em;
+	margin: 0;
+}
+
+.products .product-item .content h4{
+	color: var(--clr-primary-400);
+	font-weight: 700;
+}
+
+.products .product-item .content p.price {
+	font-weight: 800;
+}
+
+.products .product-item img{
+	max-width: 100%;
 }
 
 /* Footer styling */
